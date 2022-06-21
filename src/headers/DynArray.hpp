@@ -3,8 +3,7 @@
     #include "Memory.hpp"
     #define GROWTH_FACTOR 2 // How much to grow the dynamic array's size by
     #define GROW_CAPACITY(capacity) \
-        ((capacity) < 8 ? 8 : (capacity) * 2) 
-    
+        ((capacity) < 8 ? 8 : (capacity) * GROWTH_FACTOR) 
     // Dynamic array struct
     template <typename T>
     struct DynArray {
@@ -22,6 +21,12 @@
             }
             array[count] = data;
             count++;
+        }
+        T& operator[](int index) {
+            if (index >= count) {
+                exit(0);
+            }
+            return array[index];
         }
         ~DynArray() {
             array = reallocate<T>(array, sizeof(T) * capacity, 0);
