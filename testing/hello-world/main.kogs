@@ -1,5 +1,4 @@
 struct Main {
-    @set("main")
     main() {
         io.output("Hello World")
     } => Void
