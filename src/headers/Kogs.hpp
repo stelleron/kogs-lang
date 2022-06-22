@@ -4,6 +4,7 @@
     #include <stddef.h>
     #include <stdint.h>
     // == Project libraries
+    #include "Debug.hpp"
     #include "Memory.hpp"
     #include "DynArray.hpp"
 
