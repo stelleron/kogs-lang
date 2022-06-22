@@ -1,5 +1,6 @@
 #ifndef DYNARRAY_HPP
     #define DYNARRAY_HPP
+    #include "Debug.hpp"
     #include "Memory.hpp"
     #define GROWTH_FACTOR 2 // How much to grow the dynamic array's size by
     #define GROW_CAPACITY(capacity) \
@@ -13,7 +14,7 @@
         DynArray() {
             array = nullptr;
         }
-        void write(T data) {
+        void append(T data) {
             if (capacity < count + 1) {
                 int oldCapcity = capacity;
                 capacity = GROW_CAPACITY(oldCapcity);
@@ -24,6 +25,7 @@
         }
         T& operator[](int index) {
             if (index >= count) {
+                LOG("Error: Accessed item fron unavailable index!");
                 exit(0);
             }
             return array[index];
