@@ -2,5 +2,8 @@ all.sh
 commit.sh
 kogs-cli.make
 kogs.make
+Makefile
 re.sh
 run.sh
+bin/
+,vscode/
