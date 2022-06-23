@@ -15,11 +15,11 @@ project "kogs"
     files {"src/**.cpp"}
 
     filter "configurations:Debug"
-        defines { "NDEBUG" }
+        defines { "DEBUG" }
         symbols "On"
 
     filter "configurations:Release"
-        defines { "DEBUG" }
+        defines { "NDEBUG" }
         optimize "On"
 
 project "kogs-cli"
